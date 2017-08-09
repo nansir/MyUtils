@@ -11,7 +11,6 @@ import android.support.annotation.StringRes;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
@@ -22,9 +21,9 @@ import java.lang.ref.WeakReference;
  * 吐司相关工具类
  * Created by zhuyinan on 2017/6/21.
  */
-public class ToastUtil {
+public class ToastUtils {
 
-    private ToastUtil() {
+    private ToastUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
@@ -49,9 +48,9 @@ public class ToastUtil {
      * @param yOffset y偏移
      */
     public static void setGravity(final int gravity, final int xOffset, final int yOffset) {
-        ToastUtil.gravity = gravity;
-        ToastUtil.xOffset = xOffset;
-        ToastUtil.yOffset = yOffset;
+        ToastUtils.gravity = gravity;
+        ToastUtils.xOffset = xOffset;
+        ToastUtils.yOffset = yOffset;
     }
 
     /**
@@ -95,7 +94,7 @@ public class ToastUtil {
      * @param backgroundColor 背景色
      */
     public static void setBgColor(@ColorInt final int backgroundColor) {
-        ToastUtil.backgroundColor = backgroundColor;
+        ToastUtils.backgroundColor = backgroundColor;
     }
 
     /**
@@ -104,7 +103,7 @@ public class ToastUtil {
      * @param bgResource 背景资源
      */
     public static void setBgResource(@DrawableRes final int bgResource) {
-        ToastUtil.bgResource = bgResource;
+        ToastUtils.bgResource = bgResource;
     }
 
     /**
@@ -113,7 +112,7 @@ public class ToastUtil {
      * @param messageColor 颜色
      */
     public static void setMessageColor(@ColorInt final int messageColor) {
-        ToastUtil.messageColor = messageColor;
+        ToastUtils.messageColor = messageColor;
     }
 
     /**

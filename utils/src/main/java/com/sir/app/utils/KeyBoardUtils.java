@@ -9,7 +9,7 @@ import android.widget.EditText;
  * Created by zhuyinan on 2017/6/22.
  * Contact by 445181052@qq.com
  */
-public class KeyBoardUtil {
+public class KeyBoardUtils {
     /**
      * 打开软键盘
      *

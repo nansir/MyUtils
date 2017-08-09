@@ -21,9 +21,9 @@ import java.util.Enumeration;
  * Created by zhuyinan on 2017/3/25.
  * Contact by 445181052@qq.com
  */
-public class NetWorkUtil {
+public class NetWorkUtils {
 
-    private NetWorkUtil() {
+    private NetWorkUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

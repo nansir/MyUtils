@@ -23,9 +23,9 @@ import cz.msebera.android.httpclient.Header;
  * Contact by 445181052@qq.com
  */
 
-public class HttpUtil {
+public class HttpUtils {
 
-    private HttpUtil() {
+    private HttpUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

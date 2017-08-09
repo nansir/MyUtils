@@ -10,7 +10,7 @@ import android.os.Vibrator;
  * Contact by 445181052@qq.com
  */
 
-public class VibratorUtil {
+public class VibratorUtils {
 
     public static void Vibrate(final Context context) {
         Vibrate(context, 100);

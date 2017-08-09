@@ -5,10 +5,10 @@ package com.sir.app.utils;
  * Created by zhuyinan on 2017/3/25.
  * Contact by 445181052@qq.com
  */
-public class PinyinUtil {
+public class PinyinUtils {
 
 
-    private PinyinUtil() {
+    private PinyinUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

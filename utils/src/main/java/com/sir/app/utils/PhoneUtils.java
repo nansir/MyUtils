@@ -28,9 +28,9 @@ import java.util.List;
  * Created by zhuyinan on 2017/6/21.
  * Contact by 445181052@qq.com
  */
-public class PhoneUtil {
+public class PhoneUtils {
 
-    private PhoneUtil() {
+    private PhoneUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

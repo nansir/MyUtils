@@ -15,7 +15,7 @@ import java.io.File;
  * Created by zhuyinan on 2016/4/25.
  * Contact by 445181052@qq.com
  */
-public class AppUtil {
+public class AppUtils {
 
     /**
      * 获取应用名

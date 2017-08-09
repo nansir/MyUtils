@@ -8,14 +8,14 @@ import java.util.Random;
  * Contact by 445181052@qq.com
  */
 
-public class RandomUtil {
+public class RandomUtils {
     public static final String NUMBERS_AND_LETTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String NUMBERS = "0123456789";
     public static final String LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String CAPITAL_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String LOWER_CASE_LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
-    private RandomUtil() {
+    private RandomUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

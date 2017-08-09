@@ -19,9 +19,9 @@ import android.widget.LinearLayout;
  * Created by zhuyinan on 2016/4/25.
  * Contact by 445181052@qq.com
  */
-public class BarUtil {
+public class BarUtils {
 
-    private BarUtil() {
+    private BarUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

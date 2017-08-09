@@ -56,9 +56,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * Created by zhuyinan on 2017/3/25.
  * Contact by 445181052@qq.com
  */
-public class CacheUtil {
+public class CacheUtils {
 
-    private CacheUtil() {
+    private CacheUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
@@ -66,31 +66,31 @@ public class CacheUtil {
     public static final int TIME_DAY = TIME_HOUR * 24;
     private static final int MAX_SIZE = 1000 * 1000 * 50; // 50 mb
     private static final int MAX_COUNT = Integer.MAX_VALUE; // 不限制存放数据的数量
-    private static Map<String, CacheUtil> mInstanceMap = new HashMap<String, CacheUtil>();
+    private static Map<String, CacheUtils> mInstanceMap = new HashMap<String, CacheUtils>();
     private ACacheManager mCache;
 
-    public static CacheUtil getInstance(Context ctx) {
-        return getInstance(ctx, "CacheUtil");
+    public static CacheUtils getInstance(Context ctx) {
+        return getInstance(ctx, "CacheUtils");
     }
 
-    public static CacheUtil getInstance(Context ctx, String cacheName) {
+    public static CacheUtils getInstance(Context ctx, String cacheName) {
         File f = new File(ctx.getCacheDir(), cacheName);
         return getInstance(f, MAX_SIZE, MAX_COUNT);
     }
 
-    public static CacheUtil getInstance(File cacheDir) {
+    public static CacheUtils getInstance(File cacheDir) {
         return getInstance(cacheDir, MAX_SIZE, MAX_COUNT);
     }
 
-    public static CacheUtil getInstance(Context ctx, long max_size, int max_count) {
-        File f = new File(ctx.getCacheDir(), "CacheUtil");
+    public static CacheUtils getInstance(Context ctx, long max_size, int max_count) {
+        File f = new File(ctx.getCacheDir(), "CacheUtils");
         return getInstance(f, max_size, max_count);
     }
 
-    public static CacheUtil getInstance(File cacheDir, long max_size, int max_count) {
-        CacheUtil manager = mInstanceMap.get(cacheDir.getAbsoluteFile() + myPid());
+    public static CacheUtils getInstance(File cacheDir, long max_size, int max_count) {
+        CacheUtils manager = mInstanceMap.get(cacheDir.getAbsoluteFile() + myPid());
         if (manager == null) {
-            manager = new CacheUtil(cacheDir, max_size, max_count);
+            manager = new CacheUtils(cacheDir, max_size, max_count);
             mInstanceMap.put(cacheDir.getAbsolutePath() + myPid(), manager);
         }
         return manager;
@@ -100,7 +100,7 @@ public class CacheUtil {
         return "_" + android.os.Process.myPid();
     }
 
-    private CacheUtil(File cacheDir, long max_size, int max_count) {
+    private CacheUtils(File cacheDir, long max_size, int max_count) {
         if (!cacheDir.exists() && !cacheDir.mkdirs()) {
             throw new RuntimeException("can't make dirs in "
                     + cacheDir.getAbsolutePath());
@@ -113,7 +113,7 @@ public class CacheUtil {
      * Since writing about the file is complete, and its close method is called,
      * its contents will be registered in the cache. Example of use:
      *
-     * CacheUtil cache = new CacheUtil(this) try { OutputStream stream =
+     * CacheUtils cache = new CacheUtils(this) try { OutputStream stream =
      * cache.put("myFileName") stream.write("some bytes".getBytes()); // now
      * update cache! stream.close(); } catch(FileNotFoundException e){
      * e.printStackTrace() }

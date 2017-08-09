@@ -13,7 +13,7 @@ import android.view.animation.TranslateAnimation;
  * Contact by 445181052@qq.com
  */
 
-public class ShowOrHideUtil {
+public class ShowOrHideUtils {
 
     /**
      * 显示View-->向右边移入

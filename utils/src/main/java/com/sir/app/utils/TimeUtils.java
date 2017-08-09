@@ -11,7 +11,7 @@ import java.util.TimeZone;
  * Created by zhuyinan on 2017/4/21.
  * Contact by 445181052@qq.com
  */
-public class TimeUtil {
+public class TimeUtils {
     /**
      * 获取格林威治时间(1970年至今的秒数)
      */

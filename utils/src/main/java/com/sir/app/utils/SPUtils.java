@@ -12,9 +12,9 @@ import java.util.Map;
  * Created by zhuyinan on 2016/4/25.
  * Contact by 445181052@qq.com
  */
-public class SPUtil {
+public class SPUtils {
 
-    private SPUtil() {
+    private SPUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 

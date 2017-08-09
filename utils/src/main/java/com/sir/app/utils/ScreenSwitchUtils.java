@@ -17,11 +17,11 @@ import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
  * Created by zhuyinan on 2016/4/25.
  * Contact by 445181052@qq.com
  */
-public class ScreenSwitchUtil {
+public class ScreenSwitchUtils {
 
-    private volatile static ScreenSwitchUtil mInstance;
+    private volatile static ScreenSwitchUtils mInstance;
 
-    private ScreenSwitchUtil(Context context) {
+    private ScreenSwitchUtils(Context context) {
         // 注册重力感应器,监听屏幕旋转
         sm = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE);
         sensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -34,11 +34,11 @@ public class ScreenSwitchUtil {
     }
 
 
-    public static ScreenSwitchUtil getInstance(Context context) {
+    public static ScreenSwitchUtils getInstance(Context context) {
         if (mInstance == null) {
-            synchronized (ScreenSwitchUtil.class) {
+            synchronized (ScreenSwitchUtils.class) {
                 if (mInstance == null) {
-                    mInstance = new ScreenSwitchUtil(context);
+                    mInstance = new ScreenSwitchUtils(context);
                 }
             }
         }
