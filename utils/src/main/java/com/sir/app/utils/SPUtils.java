@@ -2,7 +2,11 @@ package com.sir.app.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
+import com.google.gson.Gson;
+
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
@@ -46,9 +50,36 @@ public class SPUtils {
         } else if (object instanceof Long) {
             editor.putLong(key, (Long) object);
         } else {
-            editor.putString(key, object.toString());
+            editor.putString(key, new Gson().toJson(object));
         }
         SharedPreferencesCompat.apply(editor);
+    }
+
+    /**
+     * 得到字符串
+     * @param context
+     * @param key
+     * @return
+     */
+    public static String getString(Context context, String key) {
+        return get(context, key, "").toString();
+    }
+
+    /**
+     * 获取实体类
+     *
+     * @param context
+     * @param key
+     * @param classOfT
+     * @param <T>
+     * @return
+     */
+    public static <T extends Serializable> T getEntity(Context context, String key, Class<T> classOfT) {
+        String json = getString(context, key);
+        if (TextUtils.isEmpty(json)) {
+            return null;
+        }
+        return new Gson().fromJson(json, classOfT);
     }
 
     /**

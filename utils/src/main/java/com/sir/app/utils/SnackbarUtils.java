@@ -257,7 +257,7 @@ public final class SnackbarUtils {
      *
      * @return snackbar视图
      */
-    public static View getView() {
+    public View getView() {
         Snackbar snackbar = snackbarWeakReference.get();
         if (snackbar == null) return null;
         return snackbar.getView();
@@ -270,7 +270,7 @@ public final class SnackbarUtils {
      * @param layoutId 布局文件
      * @param params   布局参数
      */
-    public static void addView(@LayoutRes final int layoutId, @NonNull final ViewGroup.LayoutParams params) {
+    public void addView(@LayoutRes final int layoutId, @NonNull final ViewGroup.LayoutParams params) {
         final View view = getView();
         if (view != null) {
             view.setPadding(0, 0, 0, 0);
@@ -287,7 +287,7 @@ public final class SnackbarUtils {
      * @param child  要添加的view
      * @param params 布局参数
      */
-    public static void addView(@NonNull final View child, @NonNull final ViewGroup.LayoutParams params) {
+    public void addView(@NonNull final View child, @NonNull final ViewGroup.LayoutParams params) {
         final View view = getView();
         if (view != null) {
             view.setPadding(0, 0, 0, 0);

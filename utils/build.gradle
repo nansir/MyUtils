@@ -20,8 +20,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.loopj.android:android-async-http:1.4.9'
     compile libSupportDesign
+    compile libSupportAnnotations
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.google.code.gson:gson:2.8.2'
 }
 
 
