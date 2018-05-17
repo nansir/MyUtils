@@ -15,12 +15,16 @@ import java.util.List;
  * Contact by 445181052@qq.com
  */
 public class DBUtils {
+
     public static String DB_NAME;
+
     public static LiteOrm liteOrm;
 
     public static void createDb(Context activity, String userId) {
-        DB_NAME = userId + ".db";
-        liteOrm = LiteOrm.newCascadeInstance(activity, DB_NAME);
+        if (liteOrm == null) {
+            DB_NAME = userId + ".db";
+            liteOrm = LiteOrm.newSingleInstance(activity, DB_NAME);
+        }
         liteOrm.setDebugged(true);
     }
 
@@ -52,24 +56,36 @@ public class DBUtils {
      * @param cla
      * @return
      */
-    public static <T> List<T> getQueryAll(Class<T> cla) {
+    public static <T> List<T> QueryAll(Class<T> cla) {
         return liteOrm.query(cla);
     }
 
     /**
-     * 查询  某字段 等于 Value的值
+     * 查询某字段等于Value的值
      *
      * @param cla
      * @param field
      * @param value
      * @return
      */
-    public static <T> List<T> getQueryByWhere(Class<T> cla, String field, Object[] value) {
+    public static <T> List<T> queryByWhere(Class<T> cla, String field, Object[] value) {
         return liteOrm.<T>query(new QueryBuilder(cla).where(field + "=?", value));
     }
 
     /**
-     * 查询  某字段 等于 Value的值  可以指定从1-20，就是分页
+     * 根据ID查询
+     *
+     * @param id
+     * @param cla
+     * @param <T>
+     * @return
+     */
+    public static <T> T queryById(String id, Class<T> cla) {
+        return liteOrm.queryById(id, cla);
+    }
+
+    /**
+     * 查询某字段等于Value的值,可以指定从1-20,就是分页
      *
      * @param cla
      * @param field
@@ -78,12 +94,12 @@ public class DBUtils {
      * @param length
      * @return
      */
-    public static <T> List<T> getQueryByWhereLength(Class<T> cla, String field, Object[] value, int start, int length) {
+    public static <T> List<T> queryByWhereLength(Class<T> cla, String field, Object[] value, int start, int length) {
         return liteOrm.<T>query(new QueryBuilder(cla).where(field + "=?", value).limit(start, length));
     }
 
     /**
-     * 删除所有 某字段等于 Vlaue的值
+     * 删除所有某字段等于Value的值
      *
      * @param cla
      * @param field
